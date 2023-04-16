@@ -1,0 +1,55 @@
+:root {
+    --headerColor: #3333cc;
+    --dayColor: #b6bac9;
+    --buttonColor: #8bc1c1;
+    --fontColor: #fff;
+}
+
+header,
+body {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+h1 {
+    background-color: var(--headerColor);
+    font-size: 100px;
+    color: var(--fontColor);
+}
+
+label,
+h2 {
+    font-size: 40px;
+}
+
+#city {
+    border-top: 3px solid grey;
+    width: 100%;
+    justify-content: center;
+}
+
+input {
+    margin-bottom: 10px;    
+}
+
+.btn {
+    background-color: var(--buttonColor);
+    color: var(--fontColor);
+    margin: 5px;
+    width: 100%;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+#weather {
+    border: 3px solid black;
+}
+
+.container {
+    background-color: var(--dayColor);
+    color: var(--fontColor);
+    margin: 5px;
+    border: 3px solid black;
+}
