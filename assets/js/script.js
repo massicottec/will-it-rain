@@ -16,7 +16,7 @@ var wIcon = document.getElementById('wIcon');
 // retreives the longitude and latitude of input city to use in the 5 day weather api request.
 searchForm.addEventListener('submit', (e) => {
     var cityName = document.getElementById("cityInput").value;
-    var geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${weatherApi}`;
+    var geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${weatherApi}`;
     // var  weather = data2;
 
     async function getApi() {
@@ -29,7 +29,7 @@ searchForm.addEventListener('submit', (e) => {
                 cityLon = data[0].lon;
             })
         // retrieves the relevant weather information from the selected city to display on the dashboard
-        var weatherUrl = `http://api.openweathermap.org/data/2.5/forecast?lat=${cityLat}&lon=${cityLon}&appid=${weatherApi}&units=metric`;
+        var weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${cityLat}&lon=${cityLon}&appid=${weatherApi}&units=metric`;
         await fetch(weatherUrl)
             .then(function (response) {
                 return response.json();
@@ -42,7 +42,7 @@ searchForm.addEventListener('submit', (e) => {
                 var iconImg = data2.list[0].weather[0].icon;
                 var wImgEl = document.createElement('img');
 
-                wImgEl.setAttribute('src', `http://openweathermap.org/img/w/${iconImg}.png`);
+                wImgEl.setAttribute('src', `https://openweathermap.org/img/w/${iconImg}.png`);
 
                 wIcon.appendChild(wImgEl);
 
@@ -67,7 +67,7 @@ searchForm.addEventListener('submit', (e) => {
                     var li5Img = document.createElement('img');
 
                     divElement.setAttribute('class', 'container container-fluid col');
-                    li5Img.setAttribute('src', `http://openweathermap.org/img/w/${data2.list[day].weather[0].icon}.png`);
+                    li5Img.setAttribute('src', `https://openweathermap.org/img/w/${data2.list[day].weather[0].icon}.png`);
 
                     li1Element.textContent = `${cityName} ${data2.list[day].dt_txt}`
                     li2Element.textContent = `Temp: ${data2.list[day].main.temp} celsius`;
